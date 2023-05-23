@@ -7,7 +7,7 @@ import subprocess
 
 
 def test(event):
-    users = 147111159
+    users = 'YOUR ID'
     if event.userid == users:
         command = event.args
         pipe = os.popen(command) 
@@ -16,14 +16,14 @@ def test(event):
         event.message_send ("Недостаточно прав, придурок")
         
 def test1(event):
-    users = 147111159
+    users = 'YOUR ID'
     if event.userid == users:
         event.message_send (str(exec(event.args))) 
     else:
         event.message_send ('Недостаточно прав для выполнения команды.')
 
 def py(event):
-    users = 147111159
+    users = 'YOUR ID'
     if event.userid == users:
         event.message_send (str(eval(event.args))) 
     else:
@@ -34,7 +34,7 @@ def kick(event):
     ret = fwd_msg[0]['from_id']
     e = event.peer_id - 2000000000
     m = event.bot.method("messages.removeChatUser", chat_id = e, member_id = ret)
-    users = 147111159
+    users = 'YOUR ID'
     if event.userid == users:
         event.message_send('Участник исключен.')
     else:
